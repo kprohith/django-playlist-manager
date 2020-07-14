@@ -1,6 +1,14 @@
 # Playlist Manager
 
-A Django based REST API for managing songs and playlists, along with a admin management interface
+A Django based REST API for managing songs and playlists, along with a graphical management interface
+
+Buing using:
+  - [Python3.8](https://www.python.org/)
+  - [Django Framework](https://www.djangoproject.com/)
+  - [Django REST Framework](https://www.django-rest-framework.org/)
+  - [Bootstrap](https://getbootstrap.com/)
+  - [SQLite](https://www.sqlite.org/index.html)(for development)
+  - [PostgreSQL](https://www.postgresql.org/)(for production)]
 
 ## Setup Instructions:
 
@@ -13,7 +21,7 @@ A Django based REST API for managing songs and playlists, along with a admin man
 
 ## Using the app:
 
-1. Go to the Admin Page(http://127.0.0.1:8000/admin/) and login as admin with the details below to to create new users/groups/manage database of app.
+1. Go to the Admin Page (http://127.0.0.1:8000/admin/) and login as admin with the details below to to create new users/groups/manage database of app.
 2. The admin username is **admin** and password is **testing321**
 3. You can either use the Management Interface(after logging in as admin) or teh REST API(after creating a account and logging in) in order to view and update the songs/artists/albums/playlists information.
 4. The Mangement Interface at http://127.0.0.1:8000/admin/backend/ can be used to graphically add new users or update the music database of the app. You can use it to add new songs/artists/albums/playlists.
@@ -34,7 +42,7 @@ A Django based REST API for managing songs and playlists, along with a admin man
 11. Add/retrieve songs using REST API: http://127.0.0.1:8000/api/songs/songs/
 12. Add/retrieve artists using REST API: http://127.0.0.1:8000/api/artists/artists/
 13. Add/retrieve albums using REST API: http://127.0.0.1:8000/api/albums/albums/
-14. Add/retrieve playlists using REST API: http:127.0.0.1:8000:api/playlists/playlists
+14. Add/retrieve playlists using REST API: http://127.0.0.1:8000:api/playlists/playlists/
 
 Notes:
 
@@ -43,6 +51,8 @@ Although, you **have** to create an account and be logged in in order to send PO
 
 - I have included some test data for demonstration's sake. I hope you appreciate my fine taste for music.
 
-- 
+- I have exported all of the SQL code from all the major migrations that I have made and stored it in /SQL directory in order to maintain database integrity.
 
+- Set DEGUG = True in setting.py of the backend app to view detailed logs and erros messages
 
+If you find any bugs or if you think you can improve this implementaion in any manner, please fork and create a pull request!
