@@ -34,7 +34,7 @@ A Django based REST API for managing songs and playlists, along with a admin man
 11. Add/retrieve songs using REST API: http://127.0.0.1:8000/api/songs/songs/
 12. Add/retrieve artists using REST API: http://127.0.0.1:8000/api/artists/artists/
 13. Add/retrieve albums using REST API: http://127.0.0.1:8000/api/albums/albums/
-14. Add/retrieve playlists using REST API: http:127.0.0.1:8000:api/playlists/playlists
+14. Add/retrieve playlists using REST API: http://127.0.0.1:8000:api/playlists/playlists
 
 Notes:
 
