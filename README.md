@@ -1,6 +1,6 @@
 # Playlist Manager
 
-A Django based REST API for managing songs and playlists, along with a admin management interface
+A Django based REST API for managing songs and playlists, along with a graphical management interface
 
 Buing using:
   - [Python3.8](https://www.python.org/)
