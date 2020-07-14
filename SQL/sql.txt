@@ -1,0 +1,38 @@
+BEGIN;
+--
+-- Create model Album
+--
+CREATE TABLE "backend_album" ("title" varchar(50) NOT NULL, "album_id" integer NOT NULL PRIMARY KEY AUTOINCREMENT);
+--
+-- Rename field playlist_songs on playlist to songs
+--
+CREATE TABLE "backend_playlist_songs" ("id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "playlist_id" integer NOT NULL REFERENCES "backend_playlist" ("playlist_id") DEFERRABLE INITIALLY DEFERRED, "song_id" integer NOT NULL REFERENCES "backend_song" ("song_id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO "backend_playlist_songs" (id, playlist_id, song_id) SELECT id, playlist_id, song_id FROM "backend_playlist_playlist_songs";
+DROP TABLE "backend_playlist_playlist_songs";
+--
+-- Add field count to playlist
+--
+CREATE TABLE "new__backend_playlist" ("playlist_name" varchar(50) NOT NULL, "playlist_id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "duration" bigint NOT NULL, "date_created" datetime NOT NULL, "last_modified" datetime NOT NULL, "creator_id" integer NOT NULL REFERENCES "auth_user" ("id") DEFERRABLE INITIALLY DEFERRED, "count" integer NOT NULL);
+INSERT INTO "new__backend_playlist" ("playlist_name", "playlist_id", "duration", "date_created", "last_modified", "creator_id", "count") SELECT "playlist_name", "playlist_id", "duration", "date_created", "last_modified", "creator_id", 0 FROM "backend_playlist";
+DROP TABLE "backend_playlist";
+ALTER TABLE "new__backend_playlist" RENAME TO "backend_playlist";
+CREATE UNIQUE INDEX "backend_playlist_songs_playlist_id_song_id_529d6dae_uniq" ON "backend_playlist_songs" ("playlist_id", "song_id");
+CREATE INDEX "backend_playlist_songs_playlist_id_95de618b" ON "backend_playlist_songs" ("playlist_id");
+CREATE INDEX "backend_playlist_songs_song_id_67f0d6cf" ON "backend_playlist_songs" ("song_id");
+CREATE INDEX "backend_playlist_creator_id_8fc263b5" ON "backend_playlist" ("creator_id");
+--
+-- Alter field title on song
+--
+CREATE TABLE "new__backend_song" ("song_id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "year" date NOT NULL, "duration" bigint NOT NULL, "title" varchar(50) NOT NULL);
+INSERT INTO "new__backend_song" ("song_id", "year", "duration", "title") SELECT "song_id", "year", "duration", "title" FROM "backend_song";
+DROP TABLE "backend_song";
+ALTER TABLE "new__backend_song" RENAME TO "backend_song";
+--
+-- Add field album to song
+--
+CREATE TABLE "new__backend_song" ("title" varchar(50) NOT NULL, "song_id" integer NOT NULL PRIMARY KEY AUTOINCREMENT, "year" date NOT NULL, "duration" bigint NOT NULL, "album_id" integer NOT NULL REFERENCES "backend_album" ("album_id") DEFERRABLE INITIALLY DEFERRED);
+INSERT INTO "new__backend_song" ("title", "song_id", "year", "duration", "album_id") SELECT "title", "song_id", "year", "duration", 21 FROM "backend_song";
+DROP TABLE "backend_song";
+ALTER TABLE "new__backend_song" RENAME TO "backend_song";
+CREATE INDEX "backend_song_album_id_8faf312d" ON "backend_song" ("album_id");
+COMMIT;

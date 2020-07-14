@@ -1,0 +1,16 @@
+{% extends "baja_api/base_api.html" %}
+{% block content %}
+<p class='text-muted'>Management Interface</p>
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-dark"><a href="/admin" >Admin Page</li>
+                
+                <li class="list-group-item list-group-item-dark"><a href="/api/api-auth/login/?next=/api/songs/songs/" >API Login</li>
+                </br>
+                <li class="list-group-item list-group-item-light"><a href="/api/songs/songs/" >Add Songs</li>
+                <li class="list-group-item list-group-item-light"><a href="/api/artists/artists/" >Add Artists</li>
+                <li class="list-group-item list-group-item-light"><a href="/api/albums/albums/" >Add Albums</li>
+                <li class="list-group-item list-group-item-light"><a href="/api/playlists/playlists/" >Add Playlists</li>
+                <li class="list-group-item list-group-item-light"><a href="/api/playlists/playlists/" >Manage Playlists</li>
+            </ul>
+            
+{% endblock content %}

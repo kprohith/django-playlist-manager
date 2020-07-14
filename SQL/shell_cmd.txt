@@ -1,0 +1,13 @@
+from backend.models import Artist
+from backend.models import Album
+from backend.models import Song
+from backend.models import PlayList
+from django.contrib.auth.models import User
+
+
+user = User.objects.filter(username='user').first()
+a1 = Artist(name='Rihanna')
+al1 = Album(title='21')
+al2 = Album(title='R')
+
+s1 = Song(title='Hello', album=al1.album_id)
