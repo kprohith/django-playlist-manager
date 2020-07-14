@@ -2,6 +2,14 @@
 
 A Django based REST API for managing songs and playlists, along with a admin management interface
 
+Buing using:
+  - [Python3.8](https://www.python.org/)
+  - [Django Framework](https://www.djangoproject.com/)
+  - [Django REST Framework](https://www.django-rest-framework.org/)
+  - [Bootstrap](https://getbootstrap.com/)
+  - [SQLite](https://www.sqlite.org/index.html)(for development)
+  - [PostgreSQL](https://www.postgresql.org/)(for production)]
+
 ## Setup Instructions:
 
 1. Create virutal environment unsing vne/virtualenv/etc using Python3.8
@@ -45,4 +53,4 @@ Although, you **have** to create an account and be logged in in order to send PO
 
 - I have exported all of the SQL code from all the major migrations that I have made and stored it in /SQL directory in order to maintain database integrity.
 
-
+- Set DEGUG = True in setting.py of the backend app to view detailed logs and erros messages
