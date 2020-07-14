@@ -137,8 +137,8 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'rkpblog.tech@gmail.com'
-EMAIL_HOST_PASSWORD = 'QaB02*17XW4%'
+EMAIL_HOST_USER = 'enter_email'
+EMAIL_HOST_PASSWORD = 'enter_password'
 
 
 REST_FRAMEWORK = {
