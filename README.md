@@ -43,6 +43,6 @@ Although, you **have** to create an account and be logged in in order to send PO
 
 - I have included some test data for demonstration's sake. I hope you appreciate my fine taste for music.
 
-- 
+- I have exported all of the SQL code from all the major migrations that I have made and stored it in /SQL directory in order to maintain database integrity.
 
 
